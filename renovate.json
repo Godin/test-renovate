@@ -1,6 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommitsDisabled",
+    ":configMigration",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "ignorePaths": ["jacoco-maven-plugin.test/it/**"],
+  //"enabledManagers": ["maven-wrapper", "github-actions"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      //"matchCategories": ["java"],
+      //"matchManagers": ["maven"],
+      "matchPackageNames": [
+        "!org.apache.maven.plugins:*",
+        "!org.codehaus.mojo:*",
+        "!com.diffplug.spotless:*",
+        "!org.apache.felix:*",
+        "!org.sonarsource.scanner.maven:*"
+      ],
+      "allowedVersions": "=0"
+    },
+    {
+      "matchPackageNames": [
+        "org.apache.maven.plugins:*",
+        "org.codehaus.mojo:*",
+        "com.diffplug.spotless:*",
+        "org.apache.felix:*",
+        "org.sonarsource.scanner.maven:*"
+      ],
+      "addLabels": ["component: build"]
+    },
+    {
+      "matchPackageNames": ["org.apache.maven.plugins:maven-plugin-plugin"],
+      "allowedVersions": "<=3.6.4"
+    },
+    {
+      "matchPackageNames": ["org.apache.maven.plugins:maven-compiler-plugin"],
+      "allowedVersions": "<3.13.0"
+    },
+    {
+      "matchPackageNames": ["org.apache.maven.plugins:maven-surefire-plugin"],
+      "allowedVersions": "<2.20.0"
+    },
+    {
+      "matchPackageNames": ["org.ow2.asm:*"],
+      "addLabels": ["component: core"]
+    },
+    {
+      "matchPackageNames": ["org.jetbrains.kotlin:*"],
+      "addLabels": ["component: test", "language: Kotlin"]
+    },
+    {
+      "matchPackageNames": ["org.codehaus.groovy:*"],
+      "allowedVersions": "<4.0.0",
+      "addLabels": ["component: test", "language: Groovy"]
+    }
   ]
 }
