@@ -11,15 +11,8 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      //"matchCategories": ["java"],
-      //"matchManagers": ["maven"],
-      "matchPackageNames": [
-        "!org.apache.maven.plugins:*",
-        "!org.codehaus.mojo:*",
-        "!com.diffplug.spotless:*",
-        "!org.apache.felix:*",
-        "!org.sonarsource.scanner.maven:*"
-      ],
+      "matchManagers": ["maven"],
+      "matchPackageNames": ["*"],
       "allowedVersions": "=0"
     },
     {
@@ -30,6 +23,7 @@
         "org.apache.felix:*",
         "org.sonarsource.scanner.maven:*"
       ],
+      "allowedVersions": ">0",
       "addLabels": ["component: build"]
     },
     {
@@ -46,10 +40,12 @@
     },
     {
       "matchPackageNames": ["org.ow2.asm:*"],
+      "allowedVersions": ">0",
       "addLabels": ["component: core"]
     },
     {
       "matchPackageNames": ["org.jetbrains.kotlin:*"],
+      "allowedVersions": ">0",
       "addLabels": ["component: test", "language: Kotlin"]
     },
     {
