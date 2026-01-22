@@ -13,7 +13,8 @@
     {
       "matchManagers": ["maven"],
       "matchPackageNames": ["*"],
-      "allowedVersions": "=0"
+      // matchFileNames
+      "enabled": false
     },
     {
       "matchPackageNames": [
@@ -23,7 +24,7 @@
         "org.apache.felix:*",
         "org.sonarsource.scanner.maven:*"
       ],
-      "allowedVersions": ">0",
+      "enabled": true,
       "addLabels": ["component: build"]
     },
     {
@@ -40,17 +41,17 @@
     },
     {
       "matchPackageNames": ["org.ow2.asm:*"],
-      "allowedVersions": ">0",
+      "enabled": true,
       "addLabels": ["component: core"]
     },
     {
       "matchPackageNames": ["org.jetbrains.kotlin:*"],
-      "allowedVersions": ">0",
+      "enabled": true,
       "addLabels": ["component: test", "language: Kotlin"]
     },
     {
       "matchPackageNames": ["org.codehaus.groovy:*"],
-      "allowedVersions": "<4.0.0",
+      "enabled": true,
       "addLabels": ["component: test", "language: Groovy"]
     }
   ]
