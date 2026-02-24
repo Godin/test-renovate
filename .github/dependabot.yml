@@ -20,6 +20,7 @@ updates:
       - dependency-name: "com.diffplug.spotless:*"
       - dependency-name: "org.apache.felix:*"
       - dependency-name: "org.sonarsource.scanner.maven:*"
+      - dependency-name: "org.codehaus.plexus:plexus-compiler-eclipse"
     ignore:
       # It is known that upgrade from current version requires additional changes:
       - dependency-name: "org.apache.maven.plugins:maven-plugin-plugin"
