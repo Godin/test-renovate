@@ -1,0 +1,56 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitsDisabled",
+    ":configMigration",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "ignorePaths": ["jacoco-maven-plugin.test/it/**"],
+  //"enabledManagers": ["maven-wrapper", "github-actions"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["maven"],
+      "matchPackageNames": ["*"],
+      // matchFileNames
+      "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "org.apache.maven.plugins:*",
+        "org.codehaus.mojo:*",
+        "com.diffplug.spotless:*",
+        "org.apache.felix:*",
+        "org.sonarsource.scanner.maven:*"
+      ],
+      "enabled": true,
+      "addLabels": ["component: build"]
+    },
+    {
+      "matchPackageNames": ["org.apache.maven.plugins:maven-plugin-plugin"],
+      // It is known that upgrade from current version requires additional changes:
+      "allowedVersions": "<=3.6.4"
+    },
+    {
+      "matchPackageNames": ["org.apache.maven.plugins:maven-surefire-plugin"],
+      // Requires tests to be executed with Java 6:
+      "allowedVersions": "<2.20.0"
+    },
+    {
+      "matchPackageNames": ["org.ow2.asm:*"],
+      "enabled": true,
+      "addLabels": ["component: core"]
+    },
+    {
+      "matchPackageNames": ["org.jetbrains.kotlin:*"],
+      "enabled": true,
+      "addLabels": ["component: test", "language: Kotlin"]
+    },
+    {
+      "matchPackageNames": ["org.codehaus.groovy:*"],
+      "enabled": true,
+      "addLabels": ["component: test", "language: Groovy"]
+    }
+  ]
+}
