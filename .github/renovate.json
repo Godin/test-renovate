@@ -4,5 +4,12 @@
     "config:recommended",
     ":semanticCommitsDisabled",
     ":disableDependencyDashboard"
+  ],
+  "packageRules": [
+    {
+      "description": "",
+      "matchPackageNames": ["*"],
+      "enabled": false
+    }
   ]
 }
