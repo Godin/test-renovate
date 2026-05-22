@@ -10,6 +10,11 @@
       "description": "",
       "matchPackageNames": ["*"],
       "enabled": false
+    },
+    {
+      "description": "",
+      "matchDatasources": ["github-runners"],
+      "enabled": true
     }
   ]
 }
