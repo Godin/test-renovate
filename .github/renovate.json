@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitsDisabled",
+    ":disableDependencyDashboard"
+  ],
+  "packageRules": [
+    {
+      "description": "",
+      "matchPackageNames": ["*"],
+      "enabled": false
+    },
+    {
+      "description": "",
+      "matchDatasources": ["github-runners"],
+      "enabled": true
+    }
+  ]
+}
