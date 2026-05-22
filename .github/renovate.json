@@ -12,6 +12,11 @@
       "enabled": false
     },
     {
+      "matchDepTypes": ["action"],
+      "pinDigests": true,
+      "enabled": true
+    },
+    {
       "description": "",
       "matchDatasources": ["github-runners"],
       "enabled": true
