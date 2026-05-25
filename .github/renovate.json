@@ -27,9 +27,14 @@
       "enabled": true
     },
     {
+      "description": "Enable updates of ECJ",
+      "matchPackageNames": ["org.eclipse.jdt:ecj"],
+      "enabled": true
+    },
+    {
       "description": "Enable updates of ASM",
       "matchPackageNames": ["org.ow2.asm:*"],
-      "enabled": true,
+      "enabled": true
     },
     {
       "matchDepTypes": ["action"],

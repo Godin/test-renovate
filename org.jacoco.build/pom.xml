@@ -539,7 +539,7 @@
                   <version>17</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
-                  <!-- renovate depName=maven -->
+                  <!-- renovate depName=maven packageName=org.apache.maven:apache-maven -->
                   <version>3.9.11</version>
                 </requireMavenVersion>
                 <requireNoRepositories>
@@ -567,6 +567,7 @@
               <include>src/**/*.java</include>
             </includes>
             <eclipse>
+              <!-- renovate depName=eclipse-formatter packageName=org.eclipse.platform:org.eclipse.platform -->
               <version>4.30</version>
               <file>../org.jacoco.core/.settings/org.eclipse.jdt.core.prefs</file>
             </eclipse>
@@ -1022,6 +1023,7 @@
               <dependency>
                 <groupId>org.eclipse.jdt</groupId>
                 <artifactId>ecj</artifactId>
+                <!-- renovate depName=ecj packageName=org.eclipse.jdt:ecj -->
                 <version>3.41.0</version>
               </dependency>
               <dependency>
