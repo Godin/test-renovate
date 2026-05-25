@@ -5,11 +5,31 @@
     ":semanticCommitsDisabled",
     ":disableDependencyDashboard"
   ],
+  "customManagers": [
+    {
+      "description": "",
+      "customType": "regex",
+      "managerFilePatterns": ["**/pom.xml"],
+      "datasourceTemplate": "maven",
+      "versioningTemplate": "maven",
+      "matchStrings": ["<!-- renovate(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))? -->\\s+<version>(?<currentValue>.+)</version>"]
+    }
+  ],
   "packageRules": [
     {
       "description": "",
       "matchPackageNames": ["*"],
       "enabled": false
+    },
+    {
+      "description": "Maven",
+      "matchCurrentVersion": ["3.9.11"],
+      "enabled": true
+    },
+    {
+      "description": "Enable updates of ASM",
+      "matchPackageNames": ["org.ow2.asm:*"],
+      "enabled": true,
     },
     {
       "matchDepTypes": ["action"],
