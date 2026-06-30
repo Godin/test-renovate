@@ -59,6 +59,26 @@
       "description": "",
       "matchDatasources": ["github-runners"],
       "enabled": true
+    },
+    {
+      "description": "Enable updates of Maven Plugins",
+      "matchManagers": ["maven"],
+      "matchDepTypes": ["build"],
+      "matchPackageNames": [
+        "org.apache.maven.plugins:*",
+        "org.codehaus.plexus:plexus-compiler-eclipse",
+        "org.codehaus.mojo:*",
+        "com.diffplug.spotless:*",
+        "org.apache.felix:*",
+        "org.sonarsource.scanner.maven:*"
+      ],
+      "enabled": true,
+      "addLabels": ["component: build"]
+    },
+    {
+      "description": "It is known that upgrade from 3.6.4 to 3.7.0 requires additional changes",
+      "matchPackageNames": ["org.apache.maven.plugins:maven-plugin-plugin"],
+      "allowedVersions": "<3.7.0"
     }
   ]
 }
