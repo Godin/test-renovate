@@ -59,6 +59,13 @@
       "description": "",
       "matchDatasources": ["github-runners"],
       "enabled": true
+    },
+    {
+      "description": "",
+      "matchDepNames": ["*"],
+      "commitMessageAction": "Upgrade",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "to {{newValue}}"
     }
   ]
 }
