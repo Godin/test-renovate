@@ -23,8 +23,16 @@
       "enabled": false
     },
     {
+      "description": "",
+      "matchPackageNames": ["*"],
+      "commitMessageAction": "Upgrade",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "to {{newValue}}"
+    }
+    {
       "description": "Maven",
       "matchCurrentVersion": ["3.9.11"],
+      "commitMessageTopic": "Maven",
       "enabled": true
     },
     {
