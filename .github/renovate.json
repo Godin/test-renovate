@@ -5,6 +5,9 @@
     ":semanticCommitsDisabled",
     ":disableDependencyDashboard"
   ],
+  "commitMessageAction": "Upgrade",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to {{newValue}}",
   "customManagers": [
     {
       "description": "",
