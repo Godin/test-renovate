@@ -13,6 +13,11 @@
       "datasourceTemplate": "maven",
       "versioningTemplate": "maven",
       "matchStrings": ["<!-- renovate(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))? -->\\s+<version>(?<currentValue>.+)</version>"]
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["**/*.html"],
+      "matchStrings": ["<!-- renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) packageName=(?<packageName>.+?) -->\\s*(?<currentValue>.*?)\\s"]
     }
   ],
   "prHourlyLimit": 5,
@@ -28,7 +33,7 @@
       "commitMessageAction": "Upgrade",
       "commitMessageTopic": "{{depName}}",
       "commitMessageExtra": "to {{newValue}}"
-    }
+    },
     {
       "description": "Maven",
       "matchCurrentVersion": ["3.9.11"],
