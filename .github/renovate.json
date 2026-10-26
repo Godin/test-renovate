@@ -46,6 +46,13 @@
       "enabled": true
     },
     {
+      "description": "Enable updates of plexus-compiler-eclipse",
+      "matchPackageNames": ["org.codehaus.plexus:plexus-compiler-*"],
+      "groupName": "plexus-compiler-eclipse",
+      "enabled": true,
+      "addLabels": ["component: build"]
+    },
+    {
       "description": "Enable updates of Eclipse Formatter",
       "matchPackageNames": ["org.eclipse.platform:*"],
       "enabled": true
